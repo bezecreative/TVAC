@@ -167,10 +167,9 @@
   .cal-time{font-family:var(--sans);font-size:12px;font-weight:600;color:var(--muted);display:flex;align-items:center;justify-content:flex-end;padding-right:10px;}
   .cell{border-radius:9px;min-height:58px;}
   .cell.empty{background:#F1EDE4;opacity:.45;}
-  .cell.has-class{position:relative;display:flex;align-items:center;background:#fff;border:1px solid var(--card-line);border-left:4px solid var(--fc,#ccc);padding:9px 11px;transition:opacity .18s,box-shadow .18s,transform .18s;}
+  .cell.has-class{position:relative;display:flex;align-items:center;background:#fff;border:1px solid var(--card-line);padding:9px 11px;transition:opacity .18s,box-shadow .18s,transform .18s;}
   .cell.has-class:hover{box-shadow:0 8px 18px -12px rgba(60,40,20,.45);transform:translateY(-1px);}
   .cell .cname{font-family:var(--sans);font-size:12.5px;font-weight:600;color:var(--ink);line-height:1.25;}
-  .cell.care{background:rgba(152,160,124,.17);}
   .cell .care-dot{position:absolute;top:7px;right:7px;width:9px;height:9px;border-radius:50%;background:var(--terra);}
   .cell.dim{opacity:.2;}
   .cell.dim:hover{transform:none;box-shadow:none;}
@@ -536,7 +535,7 @@
     bar.appendChild(b); chips.push(b); return b;
   }
   var allChip=mkChip('all','All classes',null,false); allChip.classList.add('active');
-  Object.keys(FORMATS).forEach(function(k){mkChip(k,FORMATS[k].name,FORMATS[k].color,false);});
+  Object.keys(FORMATS).forEach(function(k){mkChip(k,FORMATS[k].name,null,false);});
   careChip=mkChip('care','Childcare available',null,true);
 
   var scroll=el('div','cal-scroll'), grid=el('div','cal-grid');
